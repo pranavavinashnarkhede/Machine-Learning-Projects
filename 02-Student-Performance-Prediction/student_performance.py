@@ -6,7 +6,7 @@ from sklearn.tree import plot_tree
 
 from sklearn.metrics import accuracy_score 
 
-Datapath = "student_performance_ml.csv"
+Datapath = "dataset/student_performance_ml.csv"
 
 Border = "-"*80
 
