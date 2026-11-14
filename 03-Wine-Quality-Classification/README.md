@@ -46,6 +46,7 @@ KNN is a supervised Machine Learning algorithm used for classification. It predi
 03-Wine-Classification-KNN/
 ├── README.md
 ├── wine_classification.py
+├── requirements.txt
 └── dataset/
     └── WinePredictor.csv
 ```
