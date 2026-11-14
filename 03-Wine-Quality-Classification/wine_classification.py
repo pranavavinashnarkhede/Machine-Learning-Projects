@@ -210,7 +210,7 @@ def MarvellousClassifier(DataPath):
 def main():
 
     # Start the classification process using the Wine dataset
-    MarvellousClassifier("WinePredictor.csv")
+    MarvellousClassifier("dataset/WinePredictor.csv")
 
 
 if __name__ == "__main__":
