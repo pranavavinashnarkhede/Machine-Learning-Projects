@@ -1,119 +1,124 @@
-# Breast Cancer Classification Using Random Forest
+# Breast Cancer Classification
 
 ## Overview
 
-Breast Cancer Classification is a Machine Learning project that uses the Random Forest Classifier to classify breast cancer cases based on different medical features.
+This project uses Machine Learning classification algorithms to predict whether a breast cancer tumor is **Malignant** or **Benign**.
 
-Random Forest combines multiple Decision Trees to make predictions and improve classification performance.
+The project uses the Breast Cancer dataset and different Machine Learning algorithms to understand and compare classification techniques.
 
-## Objectives
+## Algorithms Implemented
 
-- Understand the working of the Random Forest algorithm.
-- Load and analyze a dataset using Pandas.
-- Separate input features and target variables.
-- Split the dataset into training and testing sets.
-- Train a Random Forest classification model.
-- Evaluate model performance using accuracy and confusion matrix.
+The following five algorithms are implemented:
 
-## Technologies Used
+### 1. Random Forest
+- Uses multiple Decision Trees to make predictions.
+- Combines their predictions to produce the final result.
+- Helps improve prediction accuracy.
 
-- **Python** – Programming language
-- **Pandas** – Dataset loading and analysis
-- **Scikit-learn** – Model training, testing, and evaluation
+File: `breast_cancer.py`
+
+### 2. Bagging
+- Creates multiple models using different samples of the training data.
+- Combines predictions from these models.
+- Helps reduce overfitting and improve model stability.
+
+File: `breast_cancer_bagging.py`
+
+### 3. AdaBoost
+- Combines multiple weak learners to create a stronger model.
+- Gives more importance to incorrectly classified samples.
+- Tries to improve performance in each iteration.
+
+File: `breast_cancer_adaboost.py`
+
+### 4. Hard Voting
+- Combines predictions from Logistic Regression, Decision Tree, and KNN.
+- Each model votes for a class.
+- The class receiving the majority of votes becomes the final prediction.
+
+File: `breast_cancer_voting_hard.py`
+
+### 5. Soft Voting
+- Combines Logistic Regression, Decision Tree, and KNN.
+- Uses the predicted probabilities from each model.
+- Selects the class with the highest average probability.
+
+File: `breast_cancer_voting_soft.py`
 
 ## Dataset
 
-The project uses `breast_cancer.csv`.
+Dataset location: `dataset/breast_cancer.csv`
 
-The dataset contains medical features used to classify breast cancer cases.
+- Input features: Breast cancer measurements.
+- Target column: `target`
+- Target values represent the two tumor classes.
 
-### Input Features
-The dataset contains multiple numerical features describing characteristics of cell nuclei.
+Note: Verify the dataset's target encoding before interpreting `0` and `1` as Malignant or Benign.
 
-### Target Variable
-- **`target`** – Represents the breast cancer classification.
+## Technologies Used
 
-The target values are:
-- `0` – Malignant
-- `1` – Benign
-
-## Project Workflow
-
-1. **Dataset Loading:** Load the CSV dataset using Pandas.
-2. **Feature Selection:** Separate independent features and the target variable.
-3. **Train-Test Split:** Divide the dataset into 80% training and 20% testing data.
-4. **Model Creation:** Create a Random Forest Classifier.
-5. **Model Training:** Train the model using training data.
-6. **Model Testing:** Predict results using testing data.
-7. **Model Evaluation:** Calculate accuracy and display the confusion matrix.
-
-## Algorithm Used
-
-### Random Forest Classifier
-
-Random Forest is a supervised Machine Learning algorithm used for classification and regression.
-
-It creates multiple Decision Trees and combines their predictions to produce the final result.
-
-In this project, the Random Forest model uses 10 Decision Trees to classify breast cancer cases.
+- Python
+- Pandas
+- Scikit-learn
+- Matplotlib (if used for visualizations)
 
 ## Project Structure
 
 ```text
 04-Breast-Cancer-Classification/
 │
-├── README.md
-├── breast_cancer.py
+├── dataset/
+│   └── breast_cancer.csv
 │
-└── dataset/
-    └── breast_cancer.csv
+├── breast_cancer.py
+├── breast_cancer_bagging.py
+├── breast_cancer_adaboost.py
+├── breast_cancer_voting_hard.py
+├── breast_cancer_voting_soft.py
+│
+└── README.md
 ```
 
-## Installation and Execution
+## Installation
 
-### 1. Clone the Repository
+Install the required libraries:
 
 ```bash
-git clone https://github.com/pranavavinashnarkhede/Machine-Learning-Projects.git
+pip install pandas scikit-learn matplotlib
 ```
 
-### 2. Navigate to the Project Directory
+## How to Run
 
-```bash
-cd Machine-Learning-Projects/04-Breast-Cancer-Classification
-```
-
-### 3. Install Dependencies
-
-```bash
-pip install -r ../requirements.txt
-```
-
-### 4. Run the Program
+Run the required Python file from the project directory.
 
 ```bash
 python breast_cancer.py
 ```
 
-## Model Evaluation
+For other algorithms:
 
-The model performance is evaluated using:
+```bash
+python breast_cancer_bagging.py
+python breast_cancer_adaboost.py
+python breast_cancer_voting_hard.py
+python breast_cancer_voting_soft.py
+```
 
-- **Accuracy:** Measures the percentage of correctly classified predictions.
-- **Confusion Matrix:** Displays the number of correct and incorrect predictions for each class.
+## Evaluation
+
+Each program evaluates its model using:
+
+- Accuracy Score
+- Confusion Matrix
 
 ## Learning Outcomes
 
 Through this project, I learned:
 
-- How Random Forest works.
-- How multiple Decision Trees contribute to an ensemble model.
-- How to split a dataset into training and testing sets.
-- How to train and test a classification model.
-- How to evaluate model performance using accuracy and confusion matrix.
-
-## Author
-
-**Pranav Avinash Narkhede**
-
-GitHub: [pranavavinashnarkhede](https://github.com/pranavavinashnarkhede)
+- Random Forest classification.
+- Bagging and Boosting techniques.
+- Hard Voting and Soft Voting.
+- Ensemble Learning.
+- Model training and prediction.
+- Model evaluation using accuracy and confusion matrix.
+- Feature scaling for models that require it.
